@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do Web App</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📝 My To-Do App</h1>
+            <p class="subtitle">Organize your daily tasks efficiently</p>
+        </header>
+
+        <div class="add-task-section">
+            <h2>Add New Task</h2>
+            <form id="taskForm">
+                <div class="input-group">
+                    <input 
+                        type="text" 
+                        id="taskInput" 
+                        placeholder="Enter a new task..." 
+                        required
+                        autocomplete="off"
+                    >
+                    <button type="submit" class="btn btn-primary">Add Task</button>
+                </div>
+            </form>
+        </div>
+
+        <div class="tasks-container">
+            <div class="tasks-section">
+                <h2 class="section-title">
+                    <span class="icon">⏳</span>
+                    Pending Tasks
+                    <span class="count" id="pendingCount">0</span>
+                </h2>
+                <ul id="pendingTasks" class="task-list">
+                    <!-- Pending tasks will be added here -->
+                </ul>
+            </div>
+
+            <div class="tasks-section">
+                <h2 class="section-title">
+                    <span class="icon">✅</span>
+                    Completed Tasks
+                    <span class="count" id="completedCount">0</span>
+                </h2>
+                <ul id="completedTasks" class="task-list completed">
+                    <!-- Completed tasks will be added here -->
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Edit Modal -->
+    <div id="editModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Edit Task</h2>
+            <input type="text" id="editInput" placeholder="Edit task...">
+            <div class="modal-buttons">
+                <button id="saveEdit" class="btn btn-primary">Save</button>
+                <button id="cancelEdit" class="btn btn-secondary">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
